@@ -11,18 +11,20 @@ package T4_Ejer7;
  */
 public class Main {
     public static void main(String[] args) {
-        double num1;
-        double den1;
-        double num2;
-        double den2;
+        int num1;
+        int den1;
+        int num2;
+        int den2;
         String operacion;
         
         do {            
-            num1 = Consola.pideDouble("Dame el nuemerador 1");
-            den1 = Consola.pideDouble("Dame el denominador 1");
-            num2 = Consola.pideDouble("Dame el nuemerador 2");
-            den2 = Consola.pideDouble("Dame el denominador 2");
+            num1 = Consola.pideEntero("Dame el nuemerador 1");
+            den1 = Consola.pideEntero("Dame el denominador 1");
+            num2 = Consola.pideEntero("Dame el nuemerador 2");
+            den2 = Consola.pideEntero("Dame el denominador 2");
             operacion = Consola.pideCadena("Selecciona la operación a realizar: \"+”, \"-\", \"*” ó \"/”");
+            NumRacional numR1 = new NumRacional(num1, den1);
+            NumRacional numR2 = new NumRacional(num2, den2);
             switch (operacion){
                 case "+":
                     System.out.println("La suma es: ");
@@ -31,7 +33,7 @@ public class Main {
                     System.out.println("La suma es: ");
                     break;
                 case "*":
-                    System.out.println("La suma es: ");
+                    System.out.println("La multiplicacion es: " + NumRacional.toString(NumRacional.multiplica(numR1, numR2)));
                     break;
                 case "/":
                     System.out.println("La suma es: ");

@@ -34,9 +34,14 @@ public class NumRacional {
         this.denominador = denominador;
     }
     
-    public NumRacional multiplica (int numerador, int denominador){
-        
-        return 
+    public static NumRacional multiplica (NumRacional num1, NumRacional num2){
+        NumRacional resultado = new NumRacional(num1.getNumerador()*num2.getNumerador(),
+                num1.getDenominador()*num2.getDenominador());                
+        return resultado;
+    }
+    
+    public static String toString (NumRacional num){
+        return num.numerador + "/" + num.denominador;
     }
     
     
