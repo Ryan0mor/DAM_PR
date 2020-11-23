@@ -10,9 +10,9 @@ package T4_Ejer5;
  * @author Ryan
  */
 public class M_GestorLibros {
-    final int MAX_NUM_LIBROS = 50; // à 50
-    M_Libro [] libros = new M_Libro[MAX_NUM_LIBROS];;
-    int numLibros = 0;
+    private final int MAX_NUM_LIBROS = 50; // à 50
+    private M_Libro [] libros = new M_Libro[MAX_NUM_LIBROS];;
+    private int numLibros = 0;
 
     
     public M_GestorLibros() {
