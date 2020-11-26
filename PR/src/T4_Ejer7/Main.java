@@ -23,8 +23,8 @@ public class Main {
             num2 = Consola.pideEntero("Dame el nuemerador 2");
             den2 = Consola.pideEntero("Dame el denominador 2");
             operacion = Consola.pideCadena("Selecciona la operación a realizar: \"+”, \"-\", \"*” ó \"/”");
-            NumRacional numR1 = new NumRacional(num1, den1);
-            NumRacional numR2 = new NumRacional(num2, den2);
+            NumRacional_OLD numR1 = new NumRacional_OLD(num1, den1);
+            NumRacional_OLD numR2 = new NumRacional_OLD(num2, den2);
             switch (operacion){
                 case "+":
                     System.out.println("La suma es: ");
@@ -33,7 +33,7 @@ public class Main {
                     System.out.println("La suma es: ");
                     break;
                 case "*":
-                    System.out.println("La multiplicacion es: " + NumRacional.toString(NumRacional.multiplica(numR1, numR2)));
+                    System.out.println("La multiplicacion es: " + NumRacional_OLD.toString(NumRacional_OLD.multiplica(numR1, numR2)));
                     break;
                 case "/":
                     System.out.println("La suma es: ");
