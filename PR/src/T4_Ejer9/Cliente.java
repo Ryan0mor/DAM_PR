@@ -11,10 +11,10 @@ package T4_Ejer9;
  */
 public class Cliente {
     private String nombre;
-    private float cuota;
+    private double cuota;
     private String deporte;
 
-    public Cliente(String nombre, float cuota, String deporte) {
+    public Cliente(String nombre, double cuota, String deporte) {
         this.nombre = nombre;
         this.cuota = cuota;
         this.deporte = deporte;
@@ -28,7 +28,7 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public float getCuota() {
+    public double getCuota() {
         return cuota;
     }
 
@@ -44,5 +44,9 @@ public class Cliente {
         this.deporte = deporte;
     }
     
+    public String toString(){
+        
+        return nombre + " " + cuota + " " + deporte ;
+    }
     
 }
