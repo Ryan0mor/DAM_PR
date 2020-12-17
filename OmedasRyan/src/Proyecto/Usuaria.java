@@ -11,12 +11,12 @@ import java.util.Date;
  *
  * @author ryano
  */
-public class Usuario {
+public class Usuaria {
     private String nombre;
     private String password;
-    private Date nacimiento;
+    private Fecha nacimiento;
 
-    public Usuario(String nombre, String password, Date nacimiento) {
+    public Usuaria(String nombre, String password, Fecha nacimiento) {
         this.nombre = nombre;
         this.password = password;
         this.nacimiento = nacimiento;
@@ -38,21 +38,21 @@ public class Usuario {
         this.password = password;
     }
 
-    public Date getNacimiento() {
+    public Fecha getNacimiento() {
         return nacimiento;
     }
 
-    public void setNacimiento(Date nacimiento) {
+    public void setNacimiento(Proyecto.Fecha nacimiento) {
         this.nacimiento = nacimiento;
     }
-    
     @Override
     public String toString() {
         String muestraPass = "";
         for (int i = 0; i < password.length(); i++) {
             muestraPass += "*";
         }
-        return nombre + "     " + muestraPass + "     " + nacimiento;
+        return nombre + "         " + muestraPass + "          " + 
+                nacimiento.muestraFechaLarga();
     }
     
 }

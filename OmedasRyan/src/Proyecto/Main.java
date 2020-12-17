@@ -83,6 +83,8 @@ public class Main {
                     System.out.println("USUARIA    CONTRASEÑA    FECHA");
                     System.out.println(Gestor.muestraListado());
                     break;
+                default:
+                    Consola.muestraMensaje("Adios");
             }
         } while (opcion > 0 && opcion < 5);
     }

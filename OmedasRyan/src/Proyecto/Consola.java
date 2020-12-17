@@ -5,10 +5,6 @@
  */
 package Proyecto;
 
-import T4_Ejer6.*;
-import T4_Ejer5.*;
-import T4_Ejer3.*;
-import T3_Ejer41.*;
 import java.util.Scanner;
 
 /**

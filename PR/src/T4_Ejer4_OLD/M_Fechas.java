@@ -59,7 +59,7 @@ Se pedirán fechas por teclado (dia, mes y año) , se indicará si es correcta o
 
 Cuando se introduzca un 0 en el día, el programa terminará, sin pedir el mes y el año.
  */
-package T4_Ejer4;
+package T4_Ejer4_OLD;
 
 /**
  *
