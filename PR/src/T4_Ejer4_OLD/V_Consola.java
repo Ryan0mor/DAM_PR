@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package T4_Ejer4;
+package T4_Ejer4_OLD;
 
 import java.util.Scanner;
 

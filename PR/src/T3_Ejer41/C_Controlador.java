@@ -6,8 +6,6 @@ original y el array ordenado.
  */
 package T3_Ejer41;
 
-import T4_Ejer4.*;
-
 /**
  *
  * @author ryano
