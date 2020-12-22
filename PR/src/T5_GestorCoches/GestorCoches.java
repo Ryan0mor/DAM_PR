@@ -5,8 +5,6 @@
  */
 package T5_GestorCoches;
 
-import T5_Ejer8.Coche;
-import T5_Ejer8.MiExcepcion;
 import java.util.ArrayList;
 
 /**

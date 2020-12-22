@@ -5,8 +5,9 @@
  */
 package T5_GestorCoches;
 
-import T5_Ejer8.Coche;
-import T5_Ejer8.MiExcepcion;
+
+import T5_GestorCoches.MiExcepcion;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -15,14 +16,15 @@ import javax.swing.JOptionPane;
  */
 public class Main {
     public void altaCoche(){
-        coche c;
+        Coche c;
         try {
             String marca = JOptionPane.showInputDialog("que marca?");
             String matricula = JOptionPane.showInputDialog("que marca?");
             String km = JOptionPane.showInputDialog("que km?");
-            c = new coche(marca, matricula, km);
+            c = new Coche(marca, matricula, km);
             System.out.println(c + "ha sido dado de alta");
         } catch (Exception e) {
+            
         }
         
     }
@@ -46,6 +48,38 @@ public class Main {
     public static void main(String[] args) throws MiExcepcion {
         Coche c;
         GestorCoches.creaLista();
+        int opcion;
+        String modelo = "";
+        String matricula = "";
+        String km = "";
+        do {
+            Consola.muestraMenu();
+            opcion = Consola.pideOpcion();
+            switch (opcion){
+                case 1:
+                    modelo = Consola.pideCadena("Introduce el modelo");
+                    matricula = Consola.pideCadena("La matrícula");
+                    km = Consola.pideCadena("Los km");
+                    c = new Coche(modelo, matricula, km);
+                    if (GestorCoches.alta(c)) {
+                        System.out.println("Alta exitosa");                      
+                    } else {
+                        throw new MiExcepcion("error");
+                    }
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    matricula = Consola.pideCadena("La matricula a modificar es: ");
+                    if (GestorCoches.buscaCochePorMatricula(matricula).toString().compareTo(km)) {
+                        
+                    } else {
+            }
+            }
+            
+        } while (opcion < 1 || opcion > 5 );
+        
         try {
             c = new Coche("Tesla",  "1234FCK", 20000);
             GestorCoches.alta(c);
@@ -66,11 +100,10 @@ public class Main {
                 System.out.println("fallo en la baja");
             }
             */
-        
-        if (true) {
-            
+        } catch (MiExcepcion e){
+            System.out.println(e.toString());
         }
-        
+ 
         if (GestorCoches.modificaMatricula("12345FCK", "54321FCK")) {
             System.out.println("modificación exitosa");
         }
