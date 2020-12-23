@@ -42,16 +42,39 @@ public class Main {
                 }
             }
         }
-        
-        
     }
+    
+    public void modificaMatricula() throws MiExcepcion{
+        String matriculaOld;
+        String matriculaNew;
+        Coche c;
+        matriculaOld = Consola.pideCadena("La matricula a modificar es: ");
+        c = GestorCoches.buscaCochePorMatricula(matriculaOld);
+            if (c != null) {
+                matriculaNew = Consola.pideCadena("La matricula a modificar es: ");
+                if (GestorCoches.modificaMatricula(matriculaOld, matriculaNew)) {
+
+                }
+            }
+    }
+        
+    
     public static void main(String[] args) throws MiExcepcion {
         Coche c;
         GestorCoches.creaLista();
         int opcion;
+        int opcionDialogo;
         String modelo = "";
         String matricula = "";
+        String nuevaMatricula;
         String km = "";
+        
+        //Coches de prueba
+        c = new Coche("Tesla",  "1234FCK", 20000);
+        GestorCoches.alta(c);
+        c = new Coche("Tesla chino",  "5678FCK", 40000);
+        GestorCoches.alta(c);
+            
         do {
             Consola.muestraMenu();
             opcion = Consola.pideOpcion();
@@ -68,15 +91,40 @@ public class Main {
                     }
                     break;
                 case 2:
-                    
+                    matricula = Consola.pideCadena("La matricula a modificar es: ");
+                    c = GestorCoches.buscaCochePorMatricula(matricula);
+                    if (c != null) {
+                    opcionDialogo = JOptionPane.showConfirmDialog(null, "Matricula encontrada, confirmas la baja?");
+                        if (opcionDialogo == 1) {
+                            if (GestorCoches.baja(c)) {
+                                Consola.muestraMensaje("baja exitosa");
+                            }
+                        }
+                    } else {
+                        Consola.muestraMensaje("no se encuentra el coche");
+                    }
                     break;
                 case 3:
-                    matricula = Consola.pideCadena("La matricula a modificar es: ");
-                    if (GestorCoches.buscaCochePorMatricula(matricula).toString().compareTo(km)) {
-                        
+                    matricula = Consola.pideCadena("La matricula a mostrar es: ");
+                    c = GestorCoches.buscaCochePorMatricula(matricula);
+                    if (c != null) {
+                        System.out.println(c);
                     } else {
+                        Consola.muestraMensaje("No se encuentra un coche con esa matrícula");
+                    }
+                    break;
+                case 4:
+                    matricula = Consola.pideCadena("La matricula a modificar es: ");
+                    c = GestorCoches.buscaCochePorMatricula(matricula);
+                    if (c != null) {
+                        
+                        if (GestorCoches.modificaMatricula(matricula, matricula)) {
+                            
+                        }
+                    }
+                    
             }
-            }
+            
             
         } while (opcion < 1 || opcion > 5 );
         
